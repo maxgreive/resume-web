@@ -15,7 +15,7 @@ import { getAllPosts, sortMDByDate } from '@/utils'
 const languages = ['German', 'English']
 const frontend = ['Shopify', 'Astro', 'Jekyll', 'Vue', 'Svelte', 'React', 'Gatsby', 'JS', 'SCSS']
 const backend = ['Express', 'Node']
-const others = ['GA4', 'GTM', 'Figma']
+const others = ['GA4', 'GTM', 'Figma', 'Algolia']
 
 const MAX_POSTS = 10
 const allPosts = await getAllPosts()
@@ -48,7 +48,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					<p class='font-medium'>Send Message</p>
 				</a>
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-					<Label title='Latori GmbH'>
+					<Label title='SNOCKS'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
@@ -87,10 +87,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 		<Section title='About'>
 			<p class='text-muted-foreground'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque quia omnis
-				consectetur, voluptas praesentium veniam blanditiis ratione asperiores accusantium laborum
-				odit commodi quis deserunt incidunt et dolor iure ut! Lorem ipsum dolor sit, amet
-				consectetur adipisicing elit. Alias quia, doloribus ut beatae perspiciatis voluptatibus.
+				Lead Web Developer specializing in the Shopify ecosystem. I bridge the gap between high-end design and technical performance, leading agile teams to build scalable e-commerce experiences. Currently driving frontend innovation at SNOCKS.
 			</p>
 		</Section>
 		{
@@ -110,15 +107,27 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		<Section title='Experience'>
 			<Card
 				heading='Lead Web Developer'
+				subheading='SNOCKS Group, Mannheim'
+				date='Oct 2024 - present'
+				imagePath='/src/assets/snocks-logo.jpg'
+				altText='SNOCKS Logo'
+				imageClass='h-12 w-auto md:-left-16'
+			>
+				<span class='text-muted-foreground'>
+					Overseeing frontend architecture for 4 Shopify stores generating 60M annual revenue
+				</span>
+			</Card>
+			<Card
+				heading='Lead Web Developer'
 				subheading='Latori GmbH, Wuppertal'
-				date='Apr 2022 - present'
+				date='Apr 2022 - Sep 2024'
 				imagePath='/src/assets/latori-logo.png'
 				altText='Lorem, ipsum dolor sit'
 				imageClass='h-12 w-auto md:-left-16'
 			>
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Leading a team of 8 Shopify frontend developers.</li>
-				</ul>
+				<span class='text-muted-foreground'>
+					Led a team of 8 Shopify frontend developers.
+				</span>
 			</Card>
 			<Card
 				heading='Frontend Web Developer'
@@ -151,39 +160,33 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 				altText='Lorem, ipsum dolor sit'
 				imageClass='h-12 w-auto md:-left-16'
 			>
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>
-						Additional tech: Github, Webpack, Husky, GatsbyJS, Klaviyo, Klevu, Boost, Algolia, etc.
-					</li>
-				</ul>
+				<span class='text-muted-foreground'>
+					Developed reusable, high-performance UI components to support social features like user feeds, interactive maps, and tournament leaderboards.
+				</span>
 			</Card>
 			<Card
 				heading='Frontend Web Developer'
 				subheading='SQL Service GmbH, Wuppertal'
-				date='Nov 2017 - Maz 2019'
+				date='Nov 2017 - Mar 2019'
 				imagePath='/src/assets/sql-logo.png'
 				altText='Lorem, ipsum dolor sit'
 				imageClass='h-12 w-auto md:-left-16'
 			>
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>
-						Additional tech: Github, Webpack, Husky, GatsbyJS, Klaviyo, Klevu, Boost, Algolia, etc.
-					</li>
-				</ul>
+				<span class='text-muted-foreground'>
+					Engineered a robust, scalable SCSS architecture using CSS Grid and Flexbox to replicate complex desktop-application behaviors within the browser.
+				</span>
 			</Card>
 			<Card
 				heading='Frontend Web Developer'
 				subheading='robbers.eu, Wuppertal'
-				date='Nov 2017 - Maz 2019'
+				date='Nov 2017 - Mar 2019'
 				imagePath='/src/assets/robbers-logo.png'
 				altText='Lorem, ipsum dolor sit'
 				imageClass='h-12 w-auto md:-left-16'
 			>
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>
-						Additional tech: Github, Webpack, Husky, GatsbyJS, Klaviyo, Klevu, Boost, Algolia, etc.
-					</li>
-				</ul>
+				<span class='text-muted-foreground'>
+					Collaborated closely with renowned designer Jens Robbers to translate sophisticated, high-fidelity layouts into responsive WordPress environments.
+				</span>
 			</Card>
 		</Section>
 
@@ -196,14 +199,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 				altText='Lorem, ipsum dolor sit'
 				imageClass='h-12 w-auto md:-left-16'
 			>
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-						molestiae laboriosam pariatur!
-
-						<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-					</li>
-				</ul>
+				<span class='text-muted-foreground'>
+					Specialized in color management, typography, and image processing—skills that I now apply to high-performance web rendering and SVG optimization.
+				</span>
 			</Card>
 		</Section>
 
@@ -237,6 +235,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			</div>
 		</Section>
 
+		<!-- 
 		<Section title='Certifications'>
 			<Card
 				as='a'
@@ -258,7 +257,8 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 				imageClass='h-11 w-auto md:-left-16'
 				href='https://www.google.com'
 			/>
-		</Section>
+		</Section> 
+		-->
 
 		<Section title='Skills'>
 			<SkillLayout title='Languages' skills={languages} />
